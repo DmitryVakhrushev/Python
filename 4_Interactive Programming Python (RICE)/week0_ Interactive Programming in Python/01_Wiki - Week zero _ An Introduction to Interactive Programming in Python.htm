@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8" />
+<title>Wiki - Week zero | An Introduction to Interactive Programming in Python</title>
+<link rel="stylesheet" href="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/css/spark.main.css" />
+<link rel="stylesheet" href="https://www.coursera.org/maestro/api/course/970391/course.css">
+
+<link rel="icon" href="https://spark-public.s3.amazonaws.com/interactivepython/static/images/favicon.ico" />
+
+</head>
+
+<body>
+    <a href="#course-page-content" class="hidden">Skip Navigation</a>
+    <div class="hidden">
+        This page features MathJax technology to render mathematical formulae.
+        If you are using a screen reader, please visit <a href="http://www.dessci.com/en/products/mathplayer/">MathPlayer</a> to download the plugin for your browser. Please note that this is an Internet Explorer-only plugin at this time.
+    </div>
+
+    <h1 class="hidden">An Introduction to Interactive Programming in Python</h1>
+
+    
+    
+<div class="course-topbar container-fluid">
+
+    <div class="row-fluid">
+        
+        <div class="span3">
+          <a href="https://www.coursera.org/" class="course-topbar-logo"></a>
+        </div>
+
+        <div class="course-topbar-nav-container span9" style="float:right;">
+            <h2 class="hidden">Top Navigation Bar</h2>
+
+            <ul class="course-topbar-nav-list">
+                <li class="course-topbar-nav-list-item"><a href="https://www.coursera.org/courses/" target="_new">Courses</a></li>
+
+                
+                <li class="course-topbar-nav-list-item"
+                    tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-aboutus"
+                    data-popup="#course-topbar-aboutus" data-popup-bind-open="mouseenter" data-popup-direction="se" data-popup-close style="cursor:pointer;">
+                    <a>About <i class="icon-caret-down"></i></a>
+                </li>
+
+                                
+                <li class="course-topbar-nav-list-item"
+                    tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="course-topbar-my"
+                    data-popup="#course-topbar-my" data-popup-bind-open="mouseenter" data-popup-close style="cursor:pointer;" data-popup-direction="se">
+                    <a data-user-id="1585756">Dmitry Vakhrushev <i class="icon-caret-down"></i></a>
+                </li>
+                
+                            </ul>
+        </div>
+    </div>
+
+    <div id="course-topbar-aboutus" class="course-topbar-sublist">
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/jobs" target="_new">Jobs</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/team" target="_new">Team</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/contact" target="_new">Contact Us</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/about/" target="_new">About Us</a>
+    </div>
+
+    <div id="course-topbar-my" class="course-topbar-sublist">
+        
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/" target="_new">Courses</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/profile" target="_new">Profile</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/records" target="_new">Course Records</a>
+        <a class="course-topbar-sublist-item" href="https://www.coursera.org/account/settings" target="_new">Settings</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/interactivepython-002/class/preferences">Course Preferences</a>
+        <a class="course-topbar-sublist-item" href="https://class.coursera.org/interactivepython-002/auth/logout">Logout</a>
+    </div>
+
+</div>
+
+
+
+
+
+<style type="text/css">
+ 
+.course-topbar {
+  background-color: #4d4d4d;
+  box-shadow: inset 0px -6px 18px 0px rgba(0, 0, 0, 0.25);
+}
+
+.course-topbar-logo {
+   margin-top: 12px;
+   margin-left: 21px;
+}
+
+div.course-topbar-sublist {
+  border-top: solid 3e3e3e 1px;
+  background: #3e3e3e;
+}
+
+li.course-topbar-nav-list-item {
+  text-shadow 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+.course-topbar-nav-container a {
+   color: #d4d4d4;
+}
+
+div.course-topbar-sublist a.course-topbar-sublist-item {
+  color: #d4d4d4;
+}
+
+
+.course-topbanner {
+  border-bottom: 1px solid #BCBEC0;
+  height: 71px;
+  box-shadow 0px 0px 1px 1px #ccc;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+.course-topbanner-university-logo {
+  width: 200px;
+  overflow: hidden;
+  float: left;
+  margin-top: 12px;
+  margin-left: 21px;
+  margin-right: 20px;
+  height: 59px;
+}
+
+.course-topbanner-university-logo img {
+  max-height: 48px;
+  max-width: 200px;
+}
+
+.course-topbanner-header {
+  font-size: 16px;
+  line-height: 21px;
+  vertical-align: top;
+  margin-top: 13px;
+  margin-left: 26px;
+  margin-bottom: 0px;
+  height: 50px;
+  overflow: hidden;
+}
+ 
+.course-topbanner-name {
+  font-size: 18px;
+}
+ 
+.course-topbanner-instructor {
+  font-size: 15px;
+  font-weight: lighter;
+  white-space: nowrap;
+}
+
+.course-topbanner-side {
+  float: right;
+  margin-top: 12px;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 120px;
+  text-align: right;
+}
+
+.course-topbanner-side img {
+  height: 48px;
+  border: 1px solid #eee;
+}
+
+</style>
+<div class="course-topbanner">
+  <div class="course-topbanner-university-logo">
+    <a href="https://www.coursera.org/rice" class="coursera-university-color">
+      <img src="https://www.coursera.org/maestro/api/course/970391/university_logo" alt="University logo">
+    </a>
+  </div>
+
+  
+              <div class="course-signaturetrack-topbanner-side-join">
+          <div class='course-signaturetrack-bannerbox'>
+              <div class='course-signaturetrack-bannerbox-join'>
+                  <a target='_new' href='https://www.coursera.org/signature/course/interactivepython/970391'>Join Signature Track</a>
+              </div>
+              <div class='course-signaturetrack-bannerbox-daysleft'>2 weeks and 6 days left!</div>
+          </div>
+      </div>
+  
+  <h1 class="course-topbanner-header">
+      <a class="course-topbanner-name coursera-university-color" href="https://class.coursera.org/interactivepython-002/class/index">
+        An Introduction to Interactive Programming in Python      </a>
+      <br>
+      <span class="course-topbanner-instructor">
+        by Joe  Warren, John  Greiner, Stephen  Wong, Scott  Rixner      </span>
+  </h1>
+
+
+
+</div>
+    
+        <div class="container-fluid" style="position:relative;">
+        <div class="row-fluid">
+            <div id="course-page-sidebar">
+                <div class="course-navbar-container">
+		<a href="https://class.coursera.org/interactivepython-002/class/index">
+	<img src="https://www.coursera.org//maestro/api/course/970391/logo" style="width: 210px;height: 112px;margin: -15px 0px 8px 1px; box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);">
+	</a>
+	<h2 class="hidden">Side Navigation Bar</h2>
+<ul class="course-navbar-list">
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/class/index"  class="coursera-university-color">
+				
+				Home							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/quiz/index?quiz_type=survey"  class="coursera-university-color">
+				
+				Surveys							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+					<h3>Class</h3>
+			</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/lecture/index"  class="coursera-university-color">
+				
+				Video Lectures							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/quiz/index"  class="coursera-university-color">
+				
+				Quizzes							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/human_grading/index"  class="coursera-university-color">
+				
+				Mini-projects							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+					<h3>Tools</h3>
+			</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="http://www.codeskulptor.org" target="_blank" class="coursera-university-color">
+				
+				CodeSkulptor				<span class="icon-share"></span>			</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+					<h3>Practice and Help</h3>
+			</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/forum/index"  class="coursera-university-color">
+				
+				Discussion Forums							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=overview"  class="coursera-university-color">
+				
+				Concepts and examples							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=practice_overview"  class="coursera-university-color">
+				
+				Practice exercises							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=pystepOverview"  class="coursera-university-color">
+				
+				Pystep							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+					<h3>Administrivia</h3>
+			</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=syllabus"  class="coursera-university-color">
+				
+				Syllabus							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=coursestaff"  class="coursera-university-color">
+				
+				Course Staff							</a>
+						</li>
+	
+		
+	<li class="course-navbar-item">
+								<a href="https://class.coursera.org/interactivepython-002/wiki/view?page=honorcode"  class="coursera-university-color">
+				
+				Honor code							</a>
+						</li>
+	
+	
+		
+	
+    </ul>
+
+</div>
+            </div>
+            <div id="course-page-content">
+                                
+
+<h2 class="course-page-header">Week zero</h2>
+<div id="internal_html_page_content">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<body><dl>
+<dt> <b>Comments</b> — CodeSkulptor
+</dt>
+<dd> 
+<ul>
+<li> Non-computational parts of the program that textually describe the behavior of the program. </li>
+<li> Comments begin with <code>#</code>, everything to right of the hash is ignored by Python. </li>
+<li> Comments should be frequent so you and others can understand the code. </li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/"> CodeSkulptor </a> </li>
+<li> More examples - <a href="http://www.codeskulptor.org/#examples-more-1a_codeskulptor-prints_strings_comments.py"> Comments, Strings, and Print </a> </li>
+</ul>
+</dd>
+
+<dt> <b> Strings </b> — CodeSkulptor
+</dt>
+<dd> 
+<ul>
+<li> Sequence of characters enclosed by a pair of single or double quotes </li>
+<li> Examples are <code>"cats hate dogs"</code> and <code>'Strings are fun!'</code>. </li>
+<li> Strings are one kind of data in Python.  Their data type is denoted <code>str</code>. </li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/#examples-hello_world.py"> Hello World </a> </li>
+<li> More examples - <a href="http://www.codeskulptor.org/#examples-more-1a_codeskulptor-prints_strings_comments.py"> Comments, Strings, and Print </a>
+</li>
+</ul>
+</dd>
+
+<dt> <b>Numbers</b> — Arithmetic Expressions
+</dt>
+<dd> 
+<ul>
+<li> There are two kinds of numerical data in Python: integers and decimal numbers.
+</li>
+<li> Integers correspond to the data type <code>int</code>. Decimal numbers are represented by floating-point numbers 
+corresponding to the data type <code>float</code>. </li>
+<li> Floating-point numbers have around 15 decimal digits of accuracy. </li>
+<li> In CodeSkulptor, all numbers (even integers) are represented internally as floating-point numbers. </li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/#examples-arithmetic_expressions.py"> Arithmetic Expressions </a> </li>
+<li> More examples - <a href="http://www.codeskulptor.org/#examples-more-1a_arithmetic_expressions-floats_and_ints.py"> Floats and Ints </a> </li>
+</ul>
+</dd>
+
+<dt> <b>Arithmetic Operators</b> — Arithmetic Expressions
+</dt>
+<dd> 
+<ul>
+<li>Five basic arithmetic operators; addition (<code>+</code>), subtraction 
+(<code>-</code>), multiplication (<code>*</code>), division (<code>/</code>) 
+and exponentiation (<code>**</code>) </li>
+<li> In CodeSkulptor, the division operator (<code>/</code>) returns a floating point 
+approximation to the exact answer (as in Python 3 and Javascript). </li>
+<li> This answer differs from Python 2.6 where the division operator (<code>/</code>) 
+computes integer division (the floor of exact division). </li>
+<li> The integer division operator is <code>//</code> in all versions of Python. </li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/#examples-arithmetic_expressions.py"> Arithmetic Expressions </a> </li>
+<li> More examples -  <a href="http://www.codeskulptor.org/#examples-more-1a_arithmetic_expressions-operations.py"> Arithmetic Operations</a>,
+						 <a href="http://www.codeskulptor.org/#examples-more-1a_arithmetic_expressions-division.py"> Division</a>
+</li>
+</ul>
+</dd>
+
+<dt> <b>Arithmetic Expressions</b> — Arithmetic Expressions 
+</dt>
+<dd> 
+<ul>
+<li> An arithmetic expression is either a number or an operator applied to two arithmetic 
+
+expressions.
+</li>
+<li> Arithmetic expressions are entered as a sequence of numbers and arithmetic operators.
+</li>
+<li> Expressions are formed by grouping operators and operands via precedence: "Please 
+
+excuse my dear Aunt Sallie"; 
+parentheses, exponentiation, 
+multiplication, division, addition, subtraction.
+</li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/#examples-arithmetic_expressions.py"> Arithmetic Expressions </a> </li>
+<li> More examples - <a href="http://www.codeskulptor.org/#examples-more-1a_arithmetic_expressions-order_of_operations.py"> Order of Operations for Arithmetic Expressions</a>,
+						 <a href="http://www.codeskulptor.org/#examples-more-1a_arithmetic_expressions-errors.py"> Possible Errors for Arithmetic Expressions</a>
+</li>
+
+</ul>
+</dd>
+<dt> <b>Variables</b> — Variables
+</dt>
+<dd> 
+<ul>
+<li>  Variable names consist of a sequence of letters, number and underscores 
+
+(<code>_</code>).
+</li>
+<li>  Variable names start with a letter or underscore and are case sensitive.
+</li>
+<li>  Single equals (<code>=</code>) is used for assignment to variables. Double equals (<code>==</code>) is used 
+for testing equality. </li>
+<li> Lecture examples - <a href="http://www.codeskulptor.org/#examples-variables.py"> Variables </a> </li>
+<li> More examples - <a href="http://www.codeskulptor.org/#examples-more-1a_variables-names.py"> Variable Naming</a>,
+						 <a href="http://www.codeskulptor.org/#examples-more-1a_variables-assignment.py"> Vabiable Assignment</a>,
+						 <a href="http://www.codeskulptor.org/#examples-more-1a_variables-operations.py"> Variable Operations</a>,
+						 <a href="http://www.codeskulptor.org/#examples-more-1a_variables-formulas.py"> Formulas</a>
+</li>
+</ul>
+</dd>
+
+
+</dl></body>
+</html>
+</div>
+<hr>
+<div>
+    <div style="float:left">
+    	    	    	    	    	    </div>
+    <div style="float:right;text-align:right;font-size:10px;">
+    	Created Wed 20 Mar 2013 11:20 AM PDT -0700<br>
+    	Last Modified Wed 20 Mar 2013 11:21 AM PDT -0700    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+        
+        <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/spark.js"></script>
+    
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/core/js/modal_focus.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/core/js/get_query_parameters.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/js/lib/cookie.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/core/js/signature_track.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/app/generic/js/item_list.js" type="text/javascript"></script>
+    <script src="https://dt5zaw6a98blc.cloudfront.net/site-static/b7464ac7970b5276d2b79b5445438b53426f27b0/spark/app/generic/js/navbar.js" type="text/javascript"></script>
+
+    
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28377374-1']);
+  _gaq.push(['_setDomainName', 'coursera.org']);
+  _gaq.push(['_setAllowLinker', true]);  
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  window._204 = window._204 || [];
+  window._204.push({key:"pageview", val:{}});
+
+  (function()
+  {
+    var a = document.createElement('script'); a.type = 'text/javascript'; a.async = true;
+    a.src = 'https://eventing.coursera.org/204.min.js?client=spark&user=1585756';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(a, s);
+  })();
+
+</script>
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  
+  styleSheets: [],
+  styles: {},
+
+  jax: ["input/TeX"],
+  
+  extensions: ["tex2jax.js"],
+
+  preJax: null,
+  postJax: null,
+
+  preRemoveClass: "MathJax_Preview",
+
+  showProcessingMessages: true,
+
+  messageStyle: "none",
+  
+  displayAlign: "center",
+  displayIndent: "0em",
+  
+  delayStartupUntil: "none",
+
+  skipStartupTypeset: false,
+  
+  elements: [],
+  
+  tex2jax: {
+	    inlineMath: [
+	                 ['$$','$$'],      // uncomment this for standard TeX math delimiters
+	                 ['\\(','\\)']
+	                 ],
+
+	                 displayMath: [
+	                 ['\\[','\\]']
+	                 ],
+
+    skipTags: ["script","noscript","style","textarea","pre","code"],
+    ignoreClass: "tex2jax_ignore",
+    processClass: "tex2jax_process",
+    processEscapes: false,
+    processEnvironments: true,
+    preview: "TeX"
+    
+  },
+  
+  mml2jax: {
+    preview: "alttext"
+    
+  },
+  
+  jsMath2jax: {
+    preview: "TeX"
+    
+  },
+
+  TeX: {
+    TagSide: "right",
+    TagIndent: ".8em",
+    MultLineWidth: "85%",
+    Macros: {},
+
+    extensions: ["AMSmath.js", "AMSsymbols.js"]
+    
+  },
+
+  //============================================================================
+  //
+  //  These parameters control the MathML inupt jax.
+  //
+  MathML: {
+    //
+    //  This specifies whether to use TeX spacing or MathML spacing when the
+    //  HTML-CSS output jax is used.
+    //
+    useMathMLspacing: false
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the HTML-CSS output jax.
+  //
+  "HTML-CSS": {
+    
+    scale: 100,
+    
+    availableFonts: ["STIX","TeX"],
+    
+    preferredFont: "TeX",
+    
+    webFont: "TeX",
+    
+    imageFont: "TeX",
+    
+    undefinedFamily: "STIXGeneral,'Arial Unicode MS',serif",
+      
+    showMathMenu: true,
+
+    styles: {},
+    
+    tooltip: {
+      delayPost: 600,          // milliseconds delay before tooltip is posted after mouseover
+      delayClear: 600,         // milliseconds delay before tooltip is cleared after mouseout
+      offsetX: 10, offsetY: 5  // pixels to offset tooltip from mouse position
+    }
+  },
+  
+  //============================================================================
+  //
+  //  These parameters control the NativeMML output jax.
+  //
+  NativeMML: {
+
+    scale: 100,
+
+    showMathMenu: true,
+    showMathMenuMSIE: true,
+
+    styles: {}
+  },
+  
+  MathMenu: {
+    delay: 400,
+    
+    helpURL: "http://www.mathjax.org/help/user/",
+
+    showRenderer: true,
+    showFontMenu: false,
+    showContext:  false,
+
+    windowSettings: {
+      status: "no", toolbar: "no", locationbar: "no", menubar: "no",
+      directories: "no", personalbar: "no", resizable: "yes", scrollbars: "yes",
+      width: 100, height: 50
+    },
+    
+    styles: {}
+    
+  },
+
+  MMLorHTML: {
+    prefer: {
+      MSIE:    "MML",
+      Firefox: "MML",
+      Opera:   "HTML",
+      other:   "HTML"
+    }
+  }
+});
+</script>
+<script type="text/javascript">
+(function () {
+
+  function loadMathJax() {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://d2265nx4vomwra.cloudfront.net/2.1/MathJax.js";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  }
+
+  window.loadOrRefreshMathJax = function(domId) {
+    if (window.MathJax) {
+      if (domId) {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, domId]);
+      } else {
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    } else {
+      loadMathJax();
+    }
+  }
+})();
+</script>
+    
+    <script type="text/javascript">
+
+        function hideMaintenanceMessage() {
+            $('#maintenance_message').hide();
+            document.cookie = "spark_maintmsghide_2=1;expires=0;path=/;";
+        }
+
+        var site_base_url = "https:\/\/www.coursera.org\/";
+        var site_static_asset_url = "https:\/\/dt5zaw6a98blc.cloudfront.net\/site-static\/";
+        var spark_class_short_name = "interactivepython";
+        var spark_class_id = 970391;
+        var spark_class_url = "\/interactivepython-002";
+        var spark_signature_url = "https:\/\/class.coursera.org\/interactivepython-002\/signature\/";
+        
+        var course_strings_name = "An Introduction to Interactive Programming in Python";
+        var student_full_name = "Dmitry Vakhrushev";
+    
+    </script>
+
+    
+<script type="text/javascript">$(function() { loadOrRefreshMathJax();})</script>
+
+</body>
+
+</html>

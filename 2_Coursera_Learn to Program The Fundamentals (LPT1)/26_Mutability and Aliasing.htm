@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>
+			Mutability and Aliasing
+		</title>
+	</head>
+	<body>
+		<h1>
+			Mutability and Aliasing
+		</h1>
+		<h3>
+			Mutability
+		</h3>
+		<p>
+			We say that lists are <i>mutable</i>: they can be modified. All the other types we have seen so far (<code>str</code>, <code>int</code>, <code>float</code> and <code>bool</code>) are <i>immutable</i>: they cannot be modified.
+		</p>
+
+		<p>
+			Here are several examples of lists being modified:
+<pre>
+>>> classes = ['chem', 'bio', 'cs', 'eng']
+>>>
+>>> # Elements can be added:
+>>> classes.append('math')
+>>> classes
+['chem', 'bio', 'cs', 'eng', 'math']
+>>>
+>>> # Elements can be replaced:
+>>> classes[1] = 'soc'
+>>> classes
+['chem', 'soc', 'cs', 'eng', 'math']
+>>>
+>>> # Elements can be removed:
+>>> classes.pop()
+'math'
+>>> classes
+['chem', 'soc', 'cs', 'eng']
+</pre>
+
+	<h3>
+		Aliasing
+	</h3>
+	<p>
+		Consider the following code:
+	</p>
+
+<pre>
+>>> lst1 = [11, 12, 13, 14, 15, 16, 17]
+>>> lst2 = lst1
+>>> lst1[-1] = 18
+>>> lst2
+11, 12, 13, 14, 15, 16, 18]
+</pre>
+
+	<p>
+		After the second statement executes, <code>lst1</code> and <code>lst2</code> both refer to the same list. When two variables refer to the same objects, they are <em>aliases</em>.  If that list is modified, both of <code>lst1</code> and <code>lst2</code> will see the change. 
+				
+
+		<hr>
+		<center>
+			Jennifer Campbell &bull; Paul Gries<br>
+			University of Toronto
+		</center>
+		<hr>
+	</body>
+</html>

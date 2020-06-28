@@ -1,0 +1,75 @@
+
+help() -- shows functions parameters (docstring)
+help(print)
+
+
+dir() -- lists the methods available for an object.
+dir(str)
+
+z = [] # "z' is a list
+dir(z) # check methods available to lists
+
+Traversal (пересечение) -- processing a string one character at a time
+
+type() -- shows the type of an object
+
+Parse (разбор, структурный анализ)
+
+
+#------------------------------------------------
+
+x = 42
+id(x)
+type(x)
+
+#-----------------------------------------------
+Debugging using repr()
+#-----------------------------------------------
+s = '1 2\t 3\n 4'
+print(s)
+
+repr(s) # "'1 2\\t 3\\n 4'"
+
+
+#-----------------------------------------------
+List methods
+#-----------------------------------------------
+dir(list())
+
+'append', 'clear', 'copy', 'count', 'extend',
+'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+
+#-----------------------------------------------
+List built-in functions
+#-----------------------------------------------
+del myList[1]
+del myList[2:4]
+
+del
+min
+max
+len
+sum
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,110 @@
+<html>
+	<head>
+		<title>
+			for loop over str
+		</title>
+	</head>
+	<body>
+		<h1>
+			<code>for</code> loop over <code>str</code>
+		</h1>
+		<h3>
+			For Loops
+		</h3>
+		<p>The general form of a for loop over a string is:
+		<pre>
+for variable in str:
+    body
+		</pre>
+		</p>
+
+		<p>
+			The variable refers to each character of the string in turn and executes the body of the loop for each character. For example:
+		</p>
+		
+<pre>
+>>> s = 'yesterday'
+>>> for char in s:
+...     print(char)
+... 
+y
+e
+s
+t
+e
+r
+d
+a
+y    
+</pre>
+
+        <h3>Accumulator pattern: numeric accumulator</h3>
+		<p>
+            Consider the code below, in which the variable <code>num_vowels</code> is an accumulator:
+        </p>
+<pre>
+def count_vowels(s):
+    ''' (str) -> int
+
+    Return the number of vowels in s. Do not treat letter y as a vowel
+    
+    >>> count_vowels('Happy Anniversary!')
+    5
+    >>> count_vowels('xyz')
+    0    
+    '''
+
+    num_vowels = 0
+    
+    for char in s:
+        if char in 'aeiouAEIOU':
+            num_vowels = num_vowels + 1
+
+    return num_vowels
+</pre>
+
+		<p>
+			The <code>loop</code> in the function above will loop over each character that <code>s</code> refers to, in turn. The body of the loop is executed for each character, and when a character is a vowel, the <code>if</code> condition is <code>True</code> and the value that <code>num_vowels</code> refers to is increased by one.
+		</p>
+		<p>
+		    The variable <code>num_vowels</code> is an accumulator, because it accumulates information. It starts out referring to the value <code>0</code> and by the end of the function it refers to the number of vowels in <code>s</code>.
+		</p>
+
+<h3>Accumulator pattern: string accumulator</h3>
+		<p>
+            In the following function, the variable <code>vowels</code> is also an accumulator:
+        </p>
+  
+<pre>      
+def collect_vowels(s):
+    ''' (str) -> str
+
+    Return the vowels from s.  Do not treat the letter
+    y as a vowel.
+
+    >>> collect_vowels('Happy Anniversary!')
+    'aAiea'
+    >>> collect_vowels('xyz')
+    ''
+    '''
+
+    vowels = ''
+
+    for char in s:
+        if char in 'aeiouAEIOU':
+            vowels = vowels + char
+
+    return vowels
+</pre>
+
+<p>
+Variable <code>vowels</code> initially refers to the empty string, but over the course of the function it accumulates the vowels from <code>s</code>.
+</p>
+		<hr>
+		<center>
+			Jennifer Campbell &bull; Paul Gries<br>
+			University of Toronto
+		</center>
+		<hr>
+	</body>
+</html>

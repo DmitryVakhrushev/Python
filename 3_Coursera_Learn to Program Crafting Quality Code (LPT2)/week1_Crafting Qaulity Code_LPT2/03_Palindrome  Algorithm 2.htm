@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>	
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<link href="resources/web/styles.css" rel="stylesheet" type="text/css">
+		<link href="styles.css" rel="stylesheet" type="text/css">
+		
+		<title>Palindrome: Algorithm 2</title>					
+	</head>	
+	
+	<body>
+		<div class="page_header">
+			<!-- For local testing -->
+			<!--a href="http://web.cs.toronto.edu/"><img src="bluescreen.jpg" alt="University of Toronto - Computer Science - Image" ></a-->
+			
+			<!-- For web version -->
+			<a href="http://web.cs.toronto.edu/"><img src="resources/web/bluescreen.jpg" alt="University of Toronto - Computer Science - Image" ></a>			
+			<hr>
+		</div>
+		
+		<h1>Palindrome: Algorithm 2</h1> 
+		<h2>
+			Overview
+		</h2>
+			<p>		
+				To determine whether a string is a palindrome, the second algorithm we explored was:
+			</p>
+			<ol>
+				<li>Split the string into two halves.</li>
+				<li>Reverse the second half.</li>
+				<li>Compare the first half to the reversed second half.</li>
+			</ol>
+			<p>
+				For example, the first half of the string <code>"noon"</code> is <code>"no"</code> and the second half is <code>"on"</code>. The reverse of the second half is <code>"no"</code>.
+				Since the first half is equal to the reverse of the second half, <code>"noon"</code> is a palindrome.
+			</p>	
+			
+			<p>
+				For a string with an odd length, let's consider
+				<code>"racecar"</code>. When splitting the string
+				into two halves, we omit the middle character,
+				<code>"e"</code>. The first half of the string is
+				<code>"rac"</code> and the second half of the
+				string is <code>"car"</code>. The reverse of the
+				second half is <code>"rac"</code>. Since the first
+				half is equal to the reverse of the second half,
+				<code>"racecar"</code> is a palindrome.
+			</p>	
+			<p>
+				Finally, for a string that is not a palindrome, let's consider
+				<code>"dented"</code>. The first half of the string is
+				<code>"den"</code> and the second half of the
+				string is <code>"ted"</code>. The reverse of the
+				second half is <code>"det"</code>. Since the first
+				half is <em>not</em> equal to the reverse of the second half,
+				<code>"dented"</code> is <em>not</em> a palindrome.
+			</p>
+		<h2>
+			Code
+		</h2>
+<pre>
+def reverse(s):
+    """ (str) -> str
+
+    Return s reversed.
+
+    >>> reverse('hello')
+    'olleh'
+    """
+
+    s_reversed = ''
+    for ch in s:
+        s_reversed = ch + s_reversed
+
+    return s_reversed
+
+
+def is_palindrome_v2(s):
+    """ (str) -> bool
+
+    Return True if and only if s is a palindrome.
+
+    >>> is_palindrome_v2('noon')
+    True
+    >>> is_palindrome_v2('radar')
+    True
+    >>> is_palindrome_v2('kayaks')
+    False
+    """
+
+    middle = len(s) // 2
+    first_half = s[:middle]
+
+    if is_odd(len(s)):
+        second_half = s[middle + 1:]
+    else:
+        second_half = s[middle:]
+    second_half_reversed = reverse(second_half)
+
+    return first_half == second_half_reversed
+</pre>
+    		</body>
+	<hr>
+		<center>
+    		Jennifer Campbell &bull; Paul Gries<br />
+     		University of Toronto
+		</center>
+	<hr> 
+</html>

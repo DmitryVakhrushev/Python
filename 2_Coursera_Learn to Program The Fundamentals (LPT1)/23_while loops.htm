@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>
+			while loops
+		</title>
+	</head>
+	<body>
+		<h1>
+			<code>while</code> loops
+		</h1>
+
+<p>The general form of a <code>while</code> loop:</p>
+
+<pre>
+while <em>expression</em>:
+    <em>statements</em>
+</pre>
+
+<p>
+The <code>while</code> condition, <code>num &lt; 100</code>, is evaluated, and if it is <code>True</code> the statements in the loop body are executed.  The loop condition is rechecked and if found to be <code>True</code>, the body executes again.  This continues until the loop condition is checked and is <code>False</code>. For example:
+</p>
+    
+<pre>
+>>> num = 2
+>>> while num < 100:
+	num = num * 2
+	print(num)
+
+
+4
+8
+16
+32
+64
+128
+</pre>
+
+<p>
+    In the example above, there are 6 <em>iterations</em>: the loop body executes 6 times.
+</p>
+
+<h3>
+    Loops Conditions and Lazy Evaluation
+</h3>
+
+<p>
+<b>The problem</b>: print the characters of <code>str s</code>, up to the first vowel in <code>s</code>.
+</p>
+
+<p>
+The first attempt at solving this problem works nicely when <code>s</code> contains one or more vowel, but results in an error if there are no vowels in <code>s</code>:
+<pre>
+>>> i = 0
+>>> s = 'xyz'
+>>> while not (s[i] in 'aeiouAEIOU'):
+	print(s[i])
+	i = i + 1
+
+
+x
+y
+z
+Traceback (most recent call last):
+  File "<pyshell#73>", line 1, in <module>
+    while not (s[i] in 'aeiouAEIOU'):
+IndexError: string index out of range
+</pre>
+
+<p>In the code above, the error occurs when <code>s</code> is indexed at <code>i</code> and <code>i</code> is outside of the range of valid indices. To prevent this error, add an additional condition is added to ensure that <code>i</code> is within the range of valid indices for <code>s</code>:
+    
+<pre>
+>>> i = 0
+>>> s = 'xyz'
+>>> while i &lt; len(s) and not (s[i] in 'aeiouAEIOU'):
+	print(s[i])
+	i = i + 1
+
+
+x
+y
+z
+</pre>
+
+<p>
+Because Python evaluates the <code>and</code> using lazy evaluation, if the first operand is <code>False</code>, then the expression evaluates to <code>False</code> and the second operand is not even evaluated. That prevents the <code>IndexError</code> from occurring.
+</p>
+
+		<hr>
+		<center>
+			Jennifer Campbell &bull; Paul Gries<br>
+			University of Toronto
+		</center>
+		<hr>
+	</body>
+</html>

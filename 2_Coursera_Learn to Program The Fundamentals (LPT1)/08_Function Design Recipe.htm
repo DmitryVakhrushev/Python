@@ -1,0 +1,116 @@
+<html>
+
+<head>
+	<title>Function Design Recipe</title>
+</head>
+<body>
+
+<h1>Function Design Recipe</h1>
+
+<h3>The Six Steps</h3>
+<ol>
+    <li><b>Examples</b>
+        <ul>
+            <li>What should your function do?</li>
+            <li>Type a couple of example calls.</li>
+            <li>Pick a name (often a verb or verb phrase): What is a short answer to "What does your function do"?</li>
+        </ul>
+    </li>
+    <li><b>Type Contract</b>
+        <ul>
+            <li>What are the parameter types?</li>
+            <li>What type of value is returned?</li>
+        </ul>
+    </li>
+    <li><b>Header</b>
+        <ul>
+            <li>Pick meaningful parameter names.</li>
+        </ul>
+    </li>
+    <li><b>Description</b>
+        <ul>
+            <li>Mention every parameter in your description.</li>
+            <li>Describe the return value.</li>
+        </ul>
+    </li>
+    <li><b>Body</b>
+        <ul>
+            <li>Write the body of your function.</li>
+        </ul>
+    </li>
+    <li><b>Test</b>
+        <ul>
+            <li>Run the examples.</li>
+        </ul>
+    </li>
+</ol>
+
+
+<h3>Applying the Design Recipe</h3>
+
+<p><b>The problem:</b></p>
+    
+<p>The United States measures temperature in Fahrenheit and Canada measures it in Celsius.  When travelling between the two countries it helps to have a conversion function. Write a function that converts from Fahrenheit to Celsius.</p>    
+
+
+<ol>
+    <li><b>Examples</b>
+    <pre>
+    >>> convert_to_ccelsius(32)
+    0
+    >>> convert_to_celsius(212)
+    100
+    </pre>
+    </li>
+    <li><b>Type Contract</b>
+    <pre>
+    (number) -> number
+    </pre>
+    </li>
+    <li><b>Header</b>
+    <pre>
+    def convert_to_celsius(fahrenheit):
+    </pre>
+    </li>
+    <li><b>Description</b>
+    <pre>
+    Return the number of Celsius degrees equivalent to fahrenheit degrees.
+    </pre>
+    </li>
+    <li><b>Body</b>
+    <pre>
+        return (fahrenheit - 32) * 5 / 9
+    </pre>
+    </li>
+    <li><b>Test</b>
+    <pre>
+     Run the examples.   
+    </pre>
+    </li>
+</ol>
+
+<h4>Putting it all together:</h4>
+
+<pre>
+def convert_to_celsius(fahrenheit):
+   ''' (number) -> number
+   
+   Return the number of Celsius degrees equivalent to fahrenheit degrees.
+   
+   >>> convert_to_ccelsius(32)
+   0
+   >>> convert_to_celsius(212)
+   100
+   '''
+   
+   return (fahrenheit - 32) * 5 / 9
+</pre>
+<hr>
+<center>
+    Jennifer Campbell &bull; Paul Gries<br />
+     University of Toronto
+</center>
+<hr>
+        
+</body>
+</html>

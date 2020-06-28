@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<title>Function Reuse</title>
+</head>
+<body>
+
+<h1>Function Reuse</h1>
+
+<h3>Calling functions within other function definitions</h3>
+
+<p><b>The problem:</b> Calculate the semi-perimeter of a triangle.</p>
+    
+<p><b>The approach:</b> Function <code>semiperimeter</code> calls function <code>perimeter</code>.</p>
+
+<pre>
+def perimeter(side1, side2, side3):
+    '''(number, number, number) -> number
+
+    Return the perimeter of a triangle with sides of length
+    side1, side2 and side3.
+
+    >>> perimeter(3, 4, 5)
+    12
+    >>> perimeter(10.5, 6, 9.3)
+    25.8
+    '''
+    return side1 + side2 + side3
+
+
+def semiperimeter(side1, side2, side3):
+    '''(number, number, number) -> float
+
+    Return the perimeter of a triangle with sides of
+    length side1, side2 and side3.
+
+    >>> semiperimeter(3, 4, 5)
+    6.0
+    >>> semiperimeter(10.5, 6, 9.3)
+    12.9
+    '''    
+    <b>return perimeter(side1, side2, side3) / 2</b>
+</pre>
+
+<h3>Calling functions within other function calls</h3>
+
+<p><b>The problem:</b> One triangle has a base of length 3.8 and a height of length 7.0.  A second triangle has a base of length 3.5 and a height of length 6.8.  Calculate which of two triangles' areas is biggest.</b></p>
+    
+<p><b>The approach:</b> Pass calls to function <code>area</code> as arguments to built-in function <code>max</code>.</p>
+
+<pre>
+max(area(3.8, 7.0), area(3.5, 6.8))
+</pre>
+
+<hr>
+<center>
+    Jennifer Campbell &bull; Paul Gries<br />
+     University of Toronto
+</center>
+<hr>
+        
+</body>
+</html>

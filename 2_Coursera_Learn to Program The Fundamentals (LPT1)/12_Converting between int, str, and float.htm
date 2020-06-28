@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<title>
+			Converting between int, str, and float
+		</title>
+	</head>
+	<body>
+		<h1>
+			Converting between <code>int</code>, <code>str</code>,
+			and <code>float</code>
+		</h1>
+		<h3>str</h3>
+		<p>
+			Builtin function <code>str</code> takes any value and returns a string representation of that value.
+		</p>
+		<pre>
+>>> str(3)
+'3'
+>>> str(47.6)		
+'47.6'
+</pre>
+		<h3>int</h3>
+		<p>
+			Builtin function <code>int</code> takes a string containing only digits (possibly with a leading minus sign <code>-</code>) and returns the <code>int</code> that represents. Function <code>int</code> also converts <code>float</code> values to integers by throwing away the fractional part.
+		</p>
+		<pre>
+>>> int('12345')
+12345
+>>> int('-998')
+-998
+>>> int(-99.9)
+-99
+</pre>
+<p>If function <code>int</code> is called with a string that contains anything other than digits, a <code>ValueError</code> happens.</p>
+		<pre>
+>>> int('-99.9')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: invalid literal for int() with base 10: '-99.9'
+</pre>
+		<h3>float</h3>
+		<p>
+			Builtin function <code>float</code> takes a string containing only digits and zero or one decimal points (possibly with a leading minus sign <code>-</code>) and returns the <code>float</code> that represents.  Function <code>float</code> also converts <code>int</code> values to <code>float</code>s.
+		</p>
+		<pre>
+>>> float('-43.2')
+-43.2
+>>> float('432')
+432.0
+>>> float(4)
+4.0
+</pre>
+<p>If function <code>float</code> is called with a string that can't be converted, a <code>ValueError</code> happens.</p>
+		<pre>
+>>> float('-9.9.9')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: could not convert string to float: '-9.9.9'
+</pre>
+<br>
+		<hr>
+		<center>
+			Jennifer Campbell &acirc;&euro;&cent; Paul Gries<br>
+			University of Toronto
+		</center>
+		<hr>
+	</body>
+</html>

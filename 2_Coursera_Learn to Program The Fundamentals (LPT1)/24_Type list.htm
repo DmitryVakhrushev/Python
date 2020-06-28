@@ -1,0 +1,122 @@
+<html>
+	<head>
+		<title>
+			Type list
+		</title>
+	</head>
+	<body>
+		<h1>
+			Type <code>list</code>
+		</h1>
+		<h3>
+			Overview
+		</h3>
+		
+		<p>
+			Our programs will often work with collections of data. One way to store these collections of data is using Python's type <code>list</code>. 
+		</p> 
+
+		<p>
+			The general form of a list is:
+			<pre>[<em>expr1</em>, <em>expr2</em>, ..., <em>exprN</em>]</pre>
+
+			For example, here is a list of three grades:
+			<pre>grades = [80, 90, 70]</pre>
+		</p>
+
+<h3>
+	List Operations
+</h3>
+		<p>Like strings, lists can be indexed:
+			<pre>
+>>> grades[0]
+80
+>>> grades[1]
+90
+>>> grades[2]
+70
+			</pre>
+		</p>
+		
+		<p>Lists can also be sliced, using the same notation as for strings:
+		    <pre>
+>>> grades[0:2]
+[80, 90]
+		    </pre>
+		    
+		</p>
+
+
+		<p>The <code>in</code> operator can also be applied to check whether a value is an item in a list. 
+			<pre>
+>>> 90 in grades
+True
+>>> 60 in grades
+False
+			</pre>
+		</p>
+
+		<p>
+			Several of Python's built-in functions can be applied to lists, including:
+	<ul>
+	<li><code>len(list)</code>: return the length of <code>list</code>.</li>
+	<li><code>min(list)</code>: return the smallest element in <code>list</code>.</li>
+	<li><code>max(list)</code>: return the largest element in <code>list</code>.</li>
+	<li><code>sum(list)</code>: return the sum of elements of <code>list</code> (where list items must be numeric).</li>
+	</ul>
+
+<p>For example, here are some calls to those built-in functions:
+<pre>
+>>> len(grades)
+3
+>>> min(grades)
+70
+>>> max(grades)
+90
+>>> sum(grades)
+240
+			</pre>
+		<p>
+
+		<h3>
+			Types of list elements
+		</h3>
+		<p>
+			Lists elements may be of any type. For example, here is a <code>list of str</code>:
+			<pre>subjects = ['bio', 'cs', 'math', 'history']</pre>
+		</p>
+
+		<p>
+			Lists can also contain elements of more than one type. For example, a street address can be represented by a <code>list of [int, str]</code>:
+			<pre>street_address = [10, 'Main Street']</pre>
+		</p>
+
+		<h3>
+			<code>for</code> loops over <code>list</code>
+		</h3>
+		<p>Similar to looping over the characters of a string, it is possible to iterate over the elements of a list.  For example:
+			<pre>
+>>> for grade in grades:
+    print(grade)
+80
+90
+70
+			</pre>
+		</p>
+
+		<p>
+			The general form of a <code>for</code> loop over a <code>list</code> is:
+			<pre>
+for <i>variable</i> in <i>list</i>:
+    <em>body</em>
+			</pre>
+		</p>
+
+		<hr>
+		<center>
+			Jennifer Campbell &bull; Paul Gries<br>
+			University of Toronto
+		</center>
+		<hr>
+	</body>
+</html>

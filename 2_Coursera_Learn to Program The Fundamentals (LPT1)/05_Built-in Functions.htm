@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0092)https://d19vezwu8eufl6.cloudfront.net/programming1/lecture_summaries%2Fweek1%2Fbuiltins.html -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+	 <TITLE>Built-in Functions</TITLE> 
+<META http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<META name="GENERATOR" content="MSHTML 10.00.9200.16458"></HEAD> 
+<BODY>
+<H1>Built-in Functions</H1>
+<H3>Function Call</H3>
+<P>The general form of a function call: </P>
+<BLOCKQUOTE>
+  <P><EM><CODE>function_name(arguments)</CODE></EM> </P></BLOCKQUOTE>
+<P>The rules for executing a function call:     </P>
+<OL>
+  <LI>Evaluate the arguments.</LI>
+  <LI>Call the function, passing in the argument values.</LI></OL>
+<P>Terminology:</P>
+<UL>
+  <LI><EM>Argument</EM>: a value given to a function</LI>
+  <LI><EM>Pass</EM>: to provide to a function</LI>
+  <LI><EM>Call</EM>: ask Python to evaluate a function</LI>
+  <LI><EM>Return</EM>: pass back a value</LI></UL>
+<P>Example function calls:</P>
+<PRE>&gt;&gt;&gt; abs(-23)
+23
+&gt;&gt;&gt; abs(56.24)
+56.24
+</PRE>
+<H3>Function <CODE>dir</CODE></H3>
+<P>Python has a set of built-in functions.  To see the list of built-in 
+functions, run <CODE>dir(__builtins__)</CODE>:</P><CODE>&gt;&gt;&gt; 
+dir(__builtins__)&lt; br/&gt; ['ArithmeticError', 'AssertionError', 
+'AttributeError', 'BaseException', 'BufferError', 'BytesWarning', 
+'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 
+'False', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 
+'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'KeyError', 
+'KeyboardInterrupt', 'LookupError', 'MemoryError', 'NameError', 'None', 
+'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 
+'PendingDeprecationWarning', 'ReferenceError', 'ResourceWarning', 
+'RuntimeError', 'RuntimeWarning', 'StopIteration', 'SyntaxError', 
+'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'True', 'TypeError', 
+'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 
+'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 
+'Warning', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', 
+'__import__', '__name__', '__package__', 'abs', 'all', 'any', 'ascii', 'bin', 
+'bool', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 
+'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 
+'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 
+'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 
+'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 
+'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 
+'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 
+'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 
+'type', 'vars', 'zip'] </CODE> 
+<H3>Function <CODE>help</CODE></H3>
+<P>To get information about a particular function, call <CODE>help</CODE> and 
+pass the function as the argument. For example: </P>
+<PRE>&gt;&gt;&gt; help(abs)
+Help on built-in function abs in module builtins:
+abs(...)
+    abs(number) -&gt; number
+
+    Return the absolute value of the argument.
+</PRE>
+<H3>Optional arguments</H3>
+<P>In the description of function <CODE>pow</CODE> below, the square brackets 
+around <CODE>[, z]</CODE> indicate that the third argument is optional:</P>
+<PRE>&gt;&gt;&gt; help(pow)
+Help on built-in function pow in module builtins:
+
+pow(...)
+    pow(x, y[, z]) -&gt; number
+    
+    With two arguments, equivalent to x**y.  With three arguments,
+    equivalent to (x**y) % z, but may be more efficient (e.g. for longs).
+</PRE>
+<P>Function <CODE>pow</CODE> can be called with either two or three 
+arguments:</P>
+<PRE>&gt;&gt;&gt; pow(2, 5)
+32
+&gt;&gt;&gt; pow(2, 5, 3)
+2    
+</PRE>
+<HR>
+
+<CENTER>    Jennifer Campbell • Paul Gries<BR>     University of Toronto 
+</CENTER>
+<HR>
+</BODY></HTML>
